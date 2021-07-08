@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <%= image_tag @user.image_url %>
+        </div>
+
+        <div class="col-8 text-left">
+            <h1><%= @user.full_name %></h1>
+            <h2><%= @user.username %></h2>
+            <h2><%= @user.email %></h2>
+            <%= link_to "Modifica Profilo", edit_user_registration_path, class: "btn btn-secondary" %>
+        </div>
+    </div>
+</div>

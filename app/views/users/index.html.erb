@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row mt-4">
+        <% @books.each do |book| %>
+            <div class="col-sm-3">
+                <div class="card"  style="width: 17rem;">
+                    <div class="card-header book-meta"><%= current_user.full_name %></div>
+                    <div class="card-body">
+                        <div class="card-img-top"><%= image_tag book.image.url %></div>
+                        <%= link_to "Scopri di più", "#", class: "btn btn-primary" %>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>

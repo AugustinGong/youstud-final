@@ -1,0 +1,11 @@
+<%= form_for @book, html: { multipart: true } do |f| %>
+    
+    <%= f.label :image %>
+    <%= f.file_field :image, class: "form-control" %>
+    <%= f.hidden_field :image_cache %>
+
+    <%= f.submit "Salva", class: "btn btn-secondary" %>
+    
+<% end %>
+  
+  
