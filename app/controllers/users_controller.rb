@@ -13,6 +13,7 @@ class UsersController < ApplicationController
         @user = User.find_by_username(params[:username])
     end
     
-
-    
+    def user_params
+        params.require(:user).permit(:username, :first_name, :last_name, :email, :password, :image, :image_cache)
+    end
 end
