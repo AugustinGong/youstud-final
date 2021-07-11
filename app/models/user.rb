@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
 
+  acts_as_user :roles => [:admin, :student]
+
   has_many :books
 
   mount_uploader :image, ImageUploader
@@ -22,6 +24,33 @@ class User < ApplicationRecord
         user.email = data["email"] if user.email.blank?
       end
     end
+  end
+
+  def is_admin?
+    return (self.roles_mask & 1) == 1
+  end
+
+  def set_admin
+    self.roles_mask = (self.roles_mask | 1)
+    self.save
+  end
+
+  def unset_admin
+    self.roles_mask = 0
+    self.save
+  end
+  def is_studente?
+    return (self.roles_mask & 1) == 2
+  end
+
+  def set_studente
+    self.roles_mask = (self.roles_mask | 2)
+    self.save
+  end
+
+  def unset_studente
+    self.roles_mask = 0
+    self.save
   end
 
 

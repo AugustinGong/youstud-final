@@ -1,8 +1,23 @@
 <%= form_for @book, html: { multipart: true } do |f| %>
-    
-    <%= f.label :image %>
-    <%= f.file_field :image, class: "form-control" %>
-    <%= f.hidden_field :image_cache %>
+    <div class="mb-3">
+        <%= f.label :Immagine %>
+        <%= f.file_field :image, class: "form-control" %>
+        <%= f.hidden_field :image_cache %>
+    </div>
+
+    <div class="mb-3">
+        <%= f.label :Titolo %><br>
+        <%= f.text_field :title, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+        <%= f.label :Descrizione %><br>
+        <%= f.text_field :description, class: "form-control" %>
+    </div>
+
+    <div class="card-img-top mb-3">
+        <%= image_tag @book.image.url %>
+    </div>
 
     <%= f.submit "Salva", class: "btn btn-secondary" %>
     

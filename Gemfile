@@ -23,6 +23,8 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'canard', '~> 0.6.2.pre'
+
 gem 'carrierwave', '~> 2.0'
 
 gem "mini_magick"
@@ -41,7 +43,6 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rspec-rails', '~> 5.0'
 end
 
 group :development do
@@ -56,9 +57,13 @@ group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
+  gem 'cucumber-rails', '~> 2.3'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
   gem 'rexml', '~> 3.2', '>= 3.2.5'
+  gem 'database_cleaner', '~> 2.0'
+  gem 'rspec-rails', '~> 5.0'
+  gem 'rails-controller-testing', '~> 1.0', '>= 1.0.5'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
