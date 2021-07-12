@@ -364,7 +364,7 @@ DEPENDENCIES
   devise (~> 4.8)
   jbuilder (~> 2.7)
   mini_magick
-  omniauth (~> 2.0)
+  omniauth
   omniauth-facebook
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)

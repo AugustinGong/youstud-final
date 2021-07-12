@@ -31,7 +31,7 @@ gem "mini_magick"
 
 gem 'devise', '~> 4.8'
 
-gem 'omniauth', '~> 2.0'
+gem 'omniauth'
 gem 'omniauth-facebook'
 
 # Use Active Storage variant

@@ -309,6 +309,7 @@ Devise.setup do |config|
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
 
-  config.omniauth :facebook, '635635771165317', 'e51134b1407d042c484540a3244594ed'
+  config.omniauth :facebook, Rails.application.credentials.dig(:facebook, :facebook_client_id),
+  Rails.application.credentials.dig(:facebook, :facebook_client_secret), scope: 'public_profile,email'
 
 end
