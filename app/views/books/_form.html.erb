@@ -16,7 +16,9 @@
     </div>
 
     <div class="card-img-top mb-3">
-        <%= image_tag @book.image.url %>
+        <% if @book.image_url %>
+            <%= image_tag @book.image_url %>
+        <% end %>
     </div>
 
     <%= f.submit "Salva", class: "btn btn-secondary" %>

@@ -11,12 +11,17 @@ class BooksController < ApplicationController
     def new
         @book = Book.new
     end
+
+    def usersbook
+        @book = Book.find(params[:id])
+    end
+    
  
     def create
         @book = Book.new(book_params)
         @book.user_id = current_user.id if user_signed_in?
         if @book.save
-            redirect_to redirect_to dashboard_path
+            redirect_to dashboard_path
         else
             render :new
         end

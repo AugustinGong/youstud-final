@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   #dashboard
   get "/dashboard" => "users#index"
   get "user/:username" => "users#show", as: :profilo
+  get "/usersbook" => "users#usersbook"
+  get "/showall" => "users#showall"
+
 
   resources :books
   resources :users

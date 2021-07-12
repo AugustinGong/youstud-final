@@ -27,18 +27,23 @@ class UsersController < ApplicationController
             render :new
         end
     end
+
+    def usersbook
+        @book = current_user.books
+    end
+    
  
     def edit
-        authorize! :edit, User, message => "You are not authorized"
+        authorize! :edit, User, :message => "You are not authorized"
         @user = User.find(params[:id])
     end
  
     def destroy
-        authorize! :destroy, User, message => "You are not authorized"
+        authorize! :destroy, User, :message => "You are not authorized"
         @user = User.find(params[:id])
         @user.destroy
  
-        redirect_to dashboard_path
+        redirect_to showall_path
     end
  
     def update

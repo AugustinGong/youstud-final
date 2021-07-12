@@ -10,11 +10,11 @@
         </li>
 
         <li class="nav-item">
-            <%= link_to "Tutti Users", '#', class: "nav-link" %>
+            <%= link_to "Tutti Users", showall_path, class: "nav-link" %>
         </li>
 
         <li class="nav-item">
-            <%= link_to "I miei libri", "#", class: "nav-link" %>
+            <%= link_to "I miei libri", usersbook_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
             <%= link_to "Mio Profilo", profilo_path(current_user.username), class: "nav-link" %>
