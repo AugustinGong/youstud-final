@@ -18,3 +18,17 @@ Scenario: User can login
 Scenario: User can sign up
   Given I am on the signuppage    
   Then I see Sign up
+
+Scenario: User can sign in. In order to have access to the app as a student I want to sign in
+
+  Given I am on the homepage 
+  Then I should see link "accedi"
+  When I fill in "email" with "xxx@xxx.it"
+  And I fill in "password" with "xxxx"
+  Then I should be on the homepage
+
+Scenario: User can edit his profile
+
+  Given I am on the profile  
+  When I click "edit profile"
+  Then I should be on the edit profile page

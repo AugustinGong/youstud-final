@@ -5,10 +5,10 @@
                 <div class="card"  style="width: 17rem;">
                     <div class="card-header book-meta"><%= current_user.full_name %></div>
                     <div class="card-body" style="max-width: 540px;">
-                        <div class="card-img-top"><%= image_tag book.image.url %></div>
-                        <%= link_to "Scopri di più", book_path(book.id), class: "btn btn-primary" %> <br>
-                        <%= link_to "Modifica", edit_book_path(book.id), class: 'btn btn-secondary' %> <br>
-		                <%= link_to "Cancella", book_path(book.id), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' %>
+                        <div class="card-img-top"><%= image_tag book.image.url %></div><br>
+                        <%= link_to "Scopri di più", book_path(book.id), class: "d-grid gap-2 btn btn-primary" %> <br>
+                        <%= link_to "Modifica", edit_book_path(book.id), class: 'd-grid gap-2 btn btn-secondary' %> <br>
+		                <%= link_to "Cancella", book_path(book.id), method: :delete, data: { confirm: "Are you sure?" }, class: 'd-grid gap-2 btn btn-danger' %>
                     </div>
                 </div>
             </div>
